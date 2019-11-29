@@ -1,4 +1,5 @@
 var path = require('path')
+var url = require('url')
 
 // 格式化路径
 console.log('normalization-----' + path.normalize('/test/test1//2slashes/1slash/tab/..'));
@@ -25,4 +26,8 @@ console.log('path.basename---', path.basename(pathJs))
 console.log('path.extname----', path.extname(pathJs))
 
 console.log(path.parse(pathJs))
-
+console.log(__dirname, __filename)
+console.log('----------------------------------------------')
+console.log(url.parse('http://www.baidu.com?name=cc&age=24', true))
+console.log(url.resolve('http://www.baidu.com/index/list', '/user'))
+console.log(url.resolve('http://www.baidu.com/index/list', 'user'))

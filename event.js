@@ -7,7 +7,7 @@ var eventEmitter = new events.EventEmitter();
 var eventHandler = function connected() {
   console.log('|1.0 链接成功！|')
   // 触发绑定的 dataReceived 事件
-  eventEmitter.emit('dataReceived');
+  eventEmitter.emit('dataReceived'); // 将 dataReceived 广播出去
 }
 // 绑定 connection 事件
 eventEmitter.on('connection', eventHandler); // connection 事件监听器

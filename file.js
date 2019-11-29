@@ -38,7 +38,7 @@ fs.writeFile('./mkdir/test/fs.txt', '我是通过 file.js 中的 fs.write 写入
   console.log('----读取写入的数据-----')
   fs.readFile('fs.txt', function (eer, data) {
     if (err) { return console.error(err) }
-    console.log('异步读取文件数据----' + data.toString())
+    console.log('异步读取文件数据----' + data.toString()) // 读取回来的默认是二进制的内容，所以需要调用toString()方法进行转换
   })
 })
 
