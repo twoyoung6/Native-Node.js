@@ -1,7 +1,7 @@
 let http = require('http');
 let fs = require('fs');
 let template = require('art-template');
-let server = http.createServer({ 'Content-Type': 'text/plain;charset=utf8' })
+let server = http.createServer()
 let path = require('path')
 
 server.on('request', (req, res) => {
@@ -20,6 +20,7 @@ server.on('request', (req, res) => {
   } else { // 服务器文件 www目录下的文件
     let filePath = url
     fs.readFile(path.join(__dirname, '..', '/www') + url, (err, data) => { // 读取静态资源文件
+      console.log(err)
       if (err) { return res.end('SORRY, 404 NOT FOUND!') }
       res.end(data)
     })
