@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html,
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      background: #e2e1e4;
+      padding: 20px;
+    }
+    #btn-publish {
+      background: #51c4d3;
+      height: 34px;
+      font-weight: 600;
+      border-radius: 6px;
+      color: #fff;
+    }
+    .title {
+      font-size: 30px;
+      font-weight: 600;
+      color: #ed3321;
+    }
+    .comment-list {
+      width: 100%;
+      height: 100%;
+    }
+    .comment-list>p {
+      color: #2b333e;
+    }
+    .list-item {
+      list-style: none;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .list-item>span {
+      margin: 0 15px;
+      flex: 1;
+    }
+    .list-item-time {
+      color: #579572;
+    }
+    .list-item-name {
+      color: #d9a40e;
+    }
+    .list-item-content {
+      color: #ed556a;
+    }
+  </style>
+  <title>各抒己见，畅所欲言</title>
+</head>
+<body>
+  <div class="title">Node.js 评论社区</div>
+  <div class="comment">
+    <p>请发表评论</p>
+    <button id="btn-publish">我 有 话 要 说</button>
+  </div>
+  <!-- 模板引擎语法 -->
+  <div class="comment-list">
+    <p>精彩评论区</p>
+    {{each comments}}
+      <li class="list-item">
+        <span class="list-item-time">{{$value.time}}</span>
+        <span class="list-item-name">{{$value.name}}</span>
+        <span class="list-item-content">{{$value.content}}</span>
+      </li>
+    {{/each}}
+  </div>
+<script>
+  let btn = document.getElementById('btn-publish')
+  btn.onclick = function () {
+    window.location.reload(true)
+    window.location = '/post'
+  }
+</script>
+</body>
+</html>
