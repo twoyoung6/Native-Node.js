@@ -33,4 +33,4 @@ domain2.run(function () {
 })
 
 domain1.remove(emitter1);
-// emitter1.emit('error', new Error('===转换成异常，系统将奔溃==='))
+emitter1.emit('error', new Error('===转换成异常，系统将奔溃==='))

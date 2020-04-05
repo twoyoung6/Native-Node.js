@@ -19,8 +19,9 @@
     "start": "nodemon server.js",
     "web": "nodemon /web/server.js",
     "client": "nodemon /web/client.js",
+    "comment": "nodemon comment/app.js",
     "apache": "nodemon Apache/server/server.js",
-    "comment": "nodemon comment/app.js"
+    "local": "nodemon Apache/www/server.js"
   },
   "author": "twoyoung",
   "license": "ISC"

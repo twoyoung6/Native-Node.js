@@ -5,9 +5,10 @@ let server = http.createServer()
 let path = require('path')
 
 server.on('request', (req, res) => {
+  console.log(req, res)
   let url = req.url
   if (url === '/') { // 服务器根目录
-    fs.readFile(__dirname + '/template.html', (error, data) => { // 读取模板文件
+    fs.readFile(__dirname + '/index.html', (error, data) => { // 读取模板文件
       if (error) { return res.end('SORRY, 404 NOT FOUND!') }
       fs.readdir(path.join(__dirname, '..', '/www'), (error, files) => { // 读取文件目录，返回目录下所有文件的数组
         if (error) { return res.end('----www dir is not found----') }
